@@ -1,71 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Administrador de Pacientes</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <h2 class="text-center my-5 titulo">Administrador de Pacientes de Veterinaria</h2>
-    <div class="container mt-5 p-5">
-        <div id="contenido" class="row">
-            <div class="col-md-6 agregar-cita">
+    <h1>Veterinaria Felina</h1>
+    <h2>Administrador de Pacientes de Veterinaria</h2>
+    
+    <p>Bienvenido al administrador de pacientes de nuestra veterinaria. Aquí podrás gestionar todas las citas y llevar un control de los pacientes de manera eficiente.</p>
+    <p>Para más información sobre nuestros servicios, visita <a href="https://www.ejemplodeveterinaria.com">nuestro sitio web</a> o consulta nuestra <a href="#tabla-servicios">tabla de servicios</a> a continuación.</p>
+    
+    <div class="container">
+        <div id="contenido">
+            <div class="agregar-cita">
                 <form id="nueva-cita">
-                    <legend class="mb-4">Datos del Paciente</legend>
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-lg-4 col-form-label">Nombre Mascota:</label>
-                        <div class="col-sm-8 col-lg-8">
-                            <input type="text" id="mascota" name="mascota" class="form-control" placeholder="Nombre Mascota">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-lg-4 col-form-label">Propietario:</label>
-                        <div class="col-sm-8 col-lg-8">
-                            <input type="text" id="propietario" name="propietario" class="form-control"  placeholder="Nombre Dueño de la Mascota">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-lg-4 col-form-label">Teléfono:</label>
-                        <div class="col-sm-8 col-lg-8">
-                            <input type="tel" id="telefono" name="telefono" class="form-control"  placeholder="Número de Teléfono">
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-lg-4 col-form-label">Fecha:</label>
-                        <div class="col-sm-8 col-lg-8">
-                            <input type="date" id="fecha" name="fecha" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-lg-4 col-form-label">Hora:</label>
-                        <div class="col-sm-8 col-lg-8">
-                            <input type="time" id="hora" name="hora" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label class="col-sm-4 col-lg-4 col-form-label">Sintomas:</label>
-                        <div class="col-sm-8 col-lg-8">
-                            <textarea id="sintomas" name="sintomas" class="form-control"></textarea>
-                        </div>
+                    <h3>Datos del Paciente</h3>
+                    <div class="form-group">
+                        <label for="mascota">Nombre Mascota:</label>
+                        <input type="text" id="mascota" name="mascota" placeholder="Nombre Mascota">
                     </div>
                     <div class="form-group">
-                            <button type="submit" class="btn btn-success w-100 d-block">Crear Cita</button>
+                        <label for="propietario">Propietario:</label>
+                        <input type="text" id="propietario" name="propietario" placeholder="Nombre Dueño de la Mascota" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Número de Teléfono" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" name="fecha" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="hora">Hora:</label>
+                        <input type="time" id="hora" name="hora" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="sintomas">Síntomas:</label>
+                        <textarea id="sintomas" name="sintomas" aria-required="true"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Crear Cita</button>
                     </div>
                 </form>
             </div>
-            <div class="col-md-6">
-                <h2 id="administra" class="mb-4">Administra tus Citas</h2>
+            <div>
+                <h3 id="administra">Administra tus Citas</h3>
                 <ul id="citas" class="list-group lista-citas"></ul>
             </div>
-        </div> <!--.row-->
-    </div><!--.container-->
+        </div>
+    </div>
 
-    <script src="js/app.js" type="module"></script>
+    <div class="container table-container">
+        <h3 id="tabla-servicios">Tabla de Servicios</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row" >Consulta General</td>
+                    <td>$50</td>
+                </tr>
+                <tr>
+                    <td scope="row" >Vacunación</td>
+                    <td>$30</td>
+                </tr>
+                <tr>
+                    <td scope="row" >Desparasitación</td>
+                    <td>$20</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
+    <div class="container">
+        <h3>Imágenes de la Veterinaria</h3>
+        <img src="/img/decorativa.png" alt="" style="width:400px; height:200px;"> <!-- Imagen decorativa -->
+        <img src="/img/gato.png" alt="Veterinario examinando a un gato" style="width:250px; height:200px;"> <!-- Imagen no decorativa -->
+        <img src="/img/image.png" alt="Exoplanet te da la bienvenida a la primavera, te invita a seguir sus consejor para que disfruten tus mascotas de la promavera." style="width:150px; height:200px;"> <!-- Imagen con texto -->
+    </div>
+
+    <div class="container">
+        <h3>Video Informativo</h3>
+        <video controls>
+            <source src="video/veterinaria.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+            <track src="captions/veterinaria.vtt" kind="captions" srclang="es" label="Español">
+        </video>
+        <p>Para una mejor experiencia, activa los subtítulos en el video. También ofrecemos una <a href="transcript.html">transcripción completa</a> del contenido visual.</p>
+    </div>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
